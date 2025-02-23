@@ -1,0 +1,318 @@
+/* ================================
+   Global Styles
+================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    flex-direction: column;
+    color: #f5f5f5;
+    overflow-y: auto;
+}
+
+/* ================================
+   Header: Frozen at Top
+================================ */
+#mainHeader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #108d19;
+    z-index: 1000;
+    text-align: center;
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tab-pane, .tab-content {
+    padding-top: 80px;
+}
+
+/* ================================
+   Login/Register Box Styling
+================================ */
+.container {
+    width: 380px;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    text-align: center;
+    margin: auto;
+}
+
+.container h2 {
+    margin-bottom: 20px;
+    color: #fff;
+    font-weight: 600;
+}
+
+/* ================================
+   Form Input Fields - Consistent Width
+================================ */
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="file"] {
+    width: 95%;
+    padding: 12px;
+    margin: 15px auto;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    outline: none;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.85);
+    color: #333;
+    font-size: 16px;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+input::placeholder {
+    color: #888;
+}
+
+input:focus {
+    background-color: rgba(255, 255, 255, 1);
+    border-color: #5a67d8;
+    color: #333;
+}
+
+/* ================================
+   Buttons Styling
+================================ */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #5a67d8;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #434190;
+}
+
+#logoutBtn:hover {
+    background-color: #c0392b;
+}
+
+/* ================================
+   Heading & Links
+================================ */
+h2 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+a {
+    color: #c3aed6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ================================
+   Error Message Styling
+================================ */
+#error-message {
+    color: #ff6b6b;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* ================================
+   Index Page Styles
+================================ */
+header {
+    background-color: #388e3c; /* Changed to green for main header visibility */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;        /* Header fixed at top */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+h2, label, p, span, input::placeholder {
+    color: #2c2c2c;
+}
+
+/* ================================
+   Navigation Tabs with Dynamic Display
+================================ */
+ul.tabs {
+    list-style: none;
+    padding: 0;
+    margin: 100px auto 20px;  /* Added top margin for visibility */
+    display: flex;
+    justify-content: center;
+    background-color: #4CAF50;
+    border-radius: 8px;
+    max-width: 600px;
+}
+
+ul.tabs li {
+    padding: 10px;
+}
+
+ul.tabs li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+ul.tabs li a:hover,
+ul.tabs li a.active {
+    background-color: #45a049;
+    border-radius: 5px;
+}
+
+/* ================================
+   Content Area (Responsive & Scrollable)
+================================ */
+.tab-content {
+    max-width: 90%;
+    max-height: calc(100vh - 120px);
+    margin: 20px auto;
+    background: #e9e2e9;
+    color: #2b2b2b;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-top: 5px;  /* Ensures content appears below fixed header */
+}
+
+/* ================================
+   Dynamic Tab Display
+================================ */
+.tab-pane {
+    display: none;
+    animation: fadeIn 0.4s ease-in;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ================================
+   Form Styling for All Pages
+================================ */
+form {
+    margin: 20px auto;
+    padding: 10px 20px 20px 20px;
+    background: #f5f1f1;
+    color: #2c2c2c;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-width: 95%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form h2 {
+    margin-top: 0; /* Removed space between input table heading and upper border */
+    padding-top: 0;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* ================================
+   Response Box
+================================ */
+.response-box {
+    margin-top: 20px;
+    padding: 10px;
+    background: #f9f9f9;
+    color: #2c2c2c;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.response-box.success {
+    border-color: #4CAF50;
+    background-color: #e8f5e9;
+}
+
+.response-box.error {
+    border-color: #e74c3c;
+    background-color: #fbe9e7;
+}
+
+/* ================================
+   Scrollable Database Content
+================================ */
+#databaseContent {
+    text-align: left;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    color: #2b2b2b;
+    max-width: 95%;
+    margin: 0 auto;
+    max-height: 500px;
+    overflow-y: auto;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+/* ================================
+   Responsive Design
+================================ */
+@media (max-width: 768px) {
+    .container, .tab-content, form {
+        width: 95%;
+        padding: 20px;
+    }
+
+    ul.tabs {
+        flex-direction: column;
+    }
+
+    ul.tabs li {
+        text-align: center;
+    }
+}

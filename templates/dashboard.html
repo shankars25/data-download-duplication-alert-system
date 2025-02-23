@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <script>
+        if (!localStorage.getItem("token")) {
+            window.location.href = "login.html"; // Redirect if not authenticated
+        }
+    </script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <h1>Welcome to the System</h1>
+    <button id="logoutBtn">Logout</button>
+</body>
+</html>
